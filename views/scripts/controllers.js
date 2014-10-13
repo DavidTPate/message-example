@@ -13,6 +13,7 @@ angular.module('myApp.controllers', [])
                         var msg = { content: $scope.chatMessage };
                       $http.post('messages', msg).success(function() {
                           $scope.messages.push(msg);
+                          $scope.chatMessage = '';
                       });
                     };
                 }]);
