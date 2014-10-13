@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="row">
+    <div>
+        <input type="text" data-ng-model="chatMessage"/>
+        <button class="btn btn-primary" data-ng-click="sendMessage()">Send</button>
+    </div>
+</div>
+<div class="row">
+    <ul id="message-list">
+        <li class="message" data-ng-repeat="msg in messages">
+            <span><strong>Content:</strong> {{msg.content}}
+                <br/>
+                <span><strong>Received:</strong> {{msg.receivedDate}}</span>
+            </span>
+        </li>
+    </div>
+</div>

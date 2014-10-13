@@ -1,12 +1,8 @@
 (function (module, express, path, serveFavicon, logger, cookieParser, bodyParser, mainRouter, chatRouter, lessMiddleware,
-           debug) {
+           debug, serveStatic) {
     var app = express(),
         debugHelper = debug('message-example'),
         server;
-
-    // view engine setup
-    app.set('views', path.join(__dirname, 'views'));
-    app.set('view engine', 'hjs');
 
     app.use(serveFavicon(__dirname + '/public/favicon.ico'));
     app.use(logger('dev'));
@@ -14,10 +10,11 @@
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(lessMiddleware(path.join(__dirname, 'public')));
-    app.use(express.static(path.join(__dirname, 'public')));
+    app.use(serveStatic(path.join(__dirname, 'public')));
+    app.use(serveStatic(path.join(__dirname, 'views')));
 
     app.use('/', mainRouter);
-    app.use('/chat', chatRouter(
+    app.use('/', chatRouter(
         { 
             accessKeyId: process.env.AWS_ACCESS_KEY_ID,
             secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -38,22 +35,14 @@
     // will print stacktrace
     if (app.get('env') === 'development') {
         app.use(function (err, req, res, next) {
-            res.status(err.status || 500);
-            res.render('error', {
-                message: err.message,
-                error: err
-            });
+            res.status(err.status || 500).send(err);
         });
     }
 
     // production error handler
     // no stacktraces leaked to user
     app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
+        res.status(err.status || 500).send(err);
     });
 
     app.set('port', process.env.PORT || 8000);
@@ -69,4 +58,4 @@
 
 }(module, require('express'), require('path'), require('serve-favicon'), require('morgan'), require('cookie-parser'),
   require('body-parser'), require('./routes/index'), require('./routes/chat'), require('less-middleware'),
-  require('debug')));
+  require('debug'), require('serve-static')));

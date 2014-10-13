@@ -1,0 +1,16 @@
+{"Count": 1, "Items": [
+    {
+        "id": {
+            "S": "c5d552d5-2416-4a37-87be-e7ca91fb8df3"
+        },
+        "sentDate": {
+            "S": "2014-10-13T00:45:04.975Z"
+        },
+        "receivedDate": {
+            "S": "2014-10-13T00:45:04.975Z"
+        },
+        "content": {
+            "S": "This is a test message"
+        }
+    }
+], "ScannedCount": 1}
