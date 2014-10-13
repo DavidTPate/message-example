@@ -1,31 +1,34 @@
 {
-  "name": "message-example",
-  "version": "0.0.0",
-  "homepage": "https://github.com/DavidTPate/message-example",
-  "author": {
-    "name": "David Pate",
-    "email": "davidtpate@gmail.com",
-    "url": "https://github.com/DavidTPate"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DavidTPate/message-example.git"
-  },
-  "bugs": {
-    "url": "https://github.com/DavidTPate/message-example/issues"
-  },
-  "main": "app.js",
-  "dependencies": {
-    "express": "~4.9.0",
-    "body-parser": "~1.8.1",
-    "cookie-parser": "~1.3.3",
-    "morgan": "~1.3.0",
-    "serve-favicon": "~2.1.3",
-    "debug": "~2.0.0",
-    "hjs": "~0.0.6",
-    "less-middleware": "1.0.x",
-    "aws-sdk": "^2.0.19",
-    "uuid": "^2.0.1",
-    "request-type": "0.0.1"
-  }
+    "name": "message-example",
+    "version": "0.0.0",
+    "homepage": "https://github.com/DavidTPate/message-example",
+    "author": {
+        "name": "David Pate",
+        "email": "davidtpate@gmail.com",
+        "url": "https://github.com/DavidTPate"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DavidTPate/message-example.git"
+    },
+    "bugs": {
+        "url": "https://github.com/DavidTPate/message-example/issues"
+    },
+    "main": "app.js",
+    "dependencies": {
+        "express": "~4.9.0",
+        "body-parser": "~1.8.1",
+        "cookie-parser": "~1.3.3",
+        "morgan": "~1.3.0",
+        "serve-favicon": "~2.1.3",
+        "debug": "~2.0.0",
+        "hjs": "~0.0.6",
+        "less-middleware": "1.0.x",
+        "aws-sdk": "^2.0.19",
+        "uuid": "^2.0.1",
+        "request-type": "0.0.1"
+    },
+    "devDependencies": {
+        "bower": "^1.3.12"
+    }
 }
