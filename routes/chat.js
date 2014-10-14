@@ -52,7 +52,7 @@
 
             var params = {
                 Message: JSON.stringify(req.body, null, 4),
-                TopicArn: process.env.QUEUE_ARN
+                TopicArn: process.env.TOPIC_ARN
             };
 
             sns.publish(params, function (err, data) {
